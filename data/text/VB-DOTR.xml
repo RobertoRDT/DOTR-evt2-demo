@@ -12,7 +12,8 @@
     <fileDesc>
 
       <titleStmt>
-        <title>The Vercelli Book: a machine readable transcription</title>
+        <title>The Dream of the Rood (extended annotation version)</title>
+        <title>Digital Vercelli Book project</title>
         <author>Unknown</author>
         <principal>Roberto Rosselli Del Turco</principal>
         <respStmt>
@@ -35,7 +36,7 @@
 
       <publicationStmt>
         <authority>Digital Vercelli Project</authority>
-        <date>2004</date>
+        <date>2004-</date>
         <availability status="unknown">
           <p>Not to ricirculate. Contact the Digital Vercelli Project researchers for more information.</p>
         </availability>
@@ -56,7 +57,7 @@
               Italy, is a manuscript dating back to the end of the 10th century, containing miscellaneous religious
               works, in verse and prose: 23 homilies in prose and 6 poetic works following the Anglo-Saxon alliterative metrics.
             </summary>
-            <!-- check language code DONE -->
+
             <textLang mainLang="ang" otherLangs="lat">The primary language in this manuscript is Old English, with a few isolated Latin
               words and phrases.</textLang>
 
@@ -330,6 +331,22 @@
           </history>
 
         </msDesc>
+
+      <!-- ########## List of names (mainly as a named entities example)  ########## -->
+
+        <listPerson>
+          <person xml:id="God">
+            <persName>God</persName>
+          </person>
+          <person xml:id="Christ">
+            <persName>Christ</persName>
+          </person>
+          <person xml:id="Adam">
+            <persName>Adam</persName>
+            <note>See <ref target="http://dbpedia.org/page/Adam">Adam</ref> on DBpedia.</note>
+          </person>
+        </listPerson>
+
       </sourceDesc>
 
     </fileDesc>
@@ -539,11 +556,13 @@
 
     <profileDesc>
       <langUsage>
-        <language ident="lat">Latin</language>
+        <language ident="ang">Old English</language>
       </langUsage>
     </profileDesc>
 
     <revisionDesc>
+      <change when="2019-11" who="RRDT">Added named entities as an example of this feature</change>
+      <change when="2018-10" who="RRDT">Added Italian translation</change>
       <change when="2013-11" who="RRDT">Moved from entity-based markup to use of the Gaiji module elements; replaced ms
         and ss entities with choice-based element groups; cleaned up punctuation markup</change>
       <change when="2012-11" who="RRDT">Added element facsimile and all necessary stuff to do image-text
@@ -1184,20 +1203,28 @@
         <!-- #######################################  folio 104v  ####################################### -->
         <pb n="104v" xml:id="VB_fol_104v" facs="data/images/single/VB_fol_104v.jpg"/>
 
+        <lb n="1" rend="empty"/>
+        <lb n="2" rend="empty"/>
+        <lb n="3" rend="empty"/>
+        <lb n="4" rend="empty"/>
+        <lb n="5" rend="empty"/>
+        <lb n="6" rend="empty"/>
+
         <l n="1"><lb facs="#VB_line_104v_07" n="7" xml:id="VB_lb_104v_07"/><hi rend="init3.1"><g ref="#Hunc"/></hi><hi
-            rend="cap">W</hi>æt ic <g ref="#slong"/>wefna c<g ref="#ydot"/><g ref="#sins"/>t secgan wylle</l>
+            rend="cap">W</hi>æt<note>A generic, unnumbered note</note> ic
+          <g ref="#slong"/>wefna c<g ref="#ydot"/><g ref="#sins"/>t secgan wylle</l>
         <l n="2"><choice>
             <sic>hæt</sic>
             <corr resp="Grein">hwæt</corr>
-          </choice>
+          </choice><note type="critical" n="a">A critical note</note>
           <choice>
             <orig>mege mætte</orig>
             <reg>me gemætte</reg>
           </choice><lb facs="#VB_line_104v_08" n="8" xml:id="VB_lb_104v_08"/>to midre nihte</l>
-        <l n="3">syðþan <choice>
-            <orig>reord b<g ref="#eenl"/>r<g ref="#eenl"/>nd</orig>
-            <reg>reordberend</reg>
-          </choice> reste wunedon<orig><pc type="metrical">.</pc></orig></l>
+        <l n="3">syðþan <seg type="kenning"><choice>
+          <orig>reord b<g ref="#eenl"/>r<g ref="#eenl"/>nd</orig>
+          <reg>reordberend</reg>
+        </choice></seg> reste wunedon<orig><pc type="metrical">.</pc></orig><note type="comment" n="1">A comment note</note></l>
         <l n="4"><lb facs="#VB_line_104v_09" n="9" xml:id="VB_lb_104v_09"/>þuhte me þæt ic <choice>
             <orig>ge <g ref="#sins"/>awe</orig>
             <reg>gesawe</reg>
@@ -1260,10 +1287,10 @@
           </choice>
           <g ref="#colmidcomposit"/></l>
         <l n="13"><lb facs="#VB_line_104v_17" n="17" xml:id="VB_lb_104v_17"/><hi rend="cap">S</hi>yllic wæ<g ref="#sins"/>
-          <g ref="#sins"/>e <choice>
+          <g ref="#sins"/>e <seg type="kenning"><choice>
             <orig><g ref="#sins"/>ige beam</orig>
             <reg>sigebeam</reg>
-          </choice>
+          </choice></seg>
           <choice>
             <orig><abbr type="brev"><am><g ref="#et"/></am></abbr><g ref="#inodotenl"/>c</orig>
             <reg><expan><ex>and</ex></expan> ic</reg>
@@ -1444,7 +1471,11 @@
           </choice>
           <g ref="#slong"/>tod<orig><pc type="metrical">.</pc></orig></l>
         <l n="39"><hi rend="cap">O</hi>ngyrede hine þa geong hæleð þæt wæ<g ref="#sins"/>
-          god<lb facs="#VB_line_105r_15" n="15" xml:id="VB_lb_105r_15"/>ælmihtig</l>
+          <persName ref="#God" type="religion">
+            <choice>
+              <orig>god</orig>
+              <reg>God</reg>
+            </choice></persName><lb facs="#VB_line_105r_15" n="15" xml:id="VB_lb_105r_15"/>ælmihtig</l>
         <l n="40"><g ref="#slong"/>trang <choice>
             <orig><abbr type="brev"><am><g ref="#et"/></am></abbr><g ref="#slong"/>tið mod</orig>
             <reg><expan><ex>and</ex></expan> stiðmod</reg>
@@ -1544,7 +1575,11 @@
           <choice>
             <orig>ge <g ref="#sins"/>eah</orig>
             <reg>geseah</reg>
-          </choice> ic weruda<lb facs="#VB_line_105r_26" n="26" xml:id="VB_lb_105r_26"/>god</l>
+          </choice> ic weruda<lb facs="#VB_line_105r_26" n="26" xml:id="VB_lb_105r_26"/><persName ref="#God" type="religion">
+            <choice>
+              <orig>god</orig>
+              <reg>God</reg>
+            </choice></persName></l>
         <l n="52">þearle þenian þy<g ref="#sins"/>tro hæfdon</l>
         <l n="53"><choice>
             <orig>be wrigen</orig>
@@ -1561,7 +1596,11 @@
             <reg>eal gesceaft</reg>
           </choice></l>
         <l n="56">cwiðdon cyninge<g ref="#sins"/>
-            fyll<lb facs="#VB_line_105r_29" n="29" xml:id="VB_lb_105r_29"/><name>cri<g ref="#slong"/>t</name> wæ<g ref="#sins"/>
+            fyll<lb facs="#VB_line_105r_29" n="29" xml:id="VB_lb_105r_29"/><persName ref="#Christ" type="religion">
+            <choice>
+              <orig>cri<g ref="#slong"/>t</orig>
+              <reg>Crist</reg>
+            </choice></persName> wæ<g ref="#sins"/>
           <choice>
             <orig>onrode</orig>
             <reg>on rode</reg>
@@ -1586,10 +1625,10 @@
             <orig>ge namon</orig>
             <reg>genamon</reg>
           </choice>
-          <damage type="faded">hie</damage> þær ælmihtigne <name type="religion"><choice>
+          <damage type="faded">hie</damage> þær ælmihtigne <persName ref="#God" type="religion"><choice>
               <orig>god</orig>
               <reg>God</reg>
-            </choice></name></l>
+            </choice></persName></l>
         <l n="61"><g ref="#aacute"/>hofon hine of ðam
 
           <!-- #######################################  folio 105v  ####################################### -->
@@ -1629,8 +1668,10 @@
             <orig><abbr type="brev"><am><g ref="#et"/></am></abbr>he</orig>
             <reg><expan><ex>and</ex></expan> he</reg>
           </choice> hine ðær hwile reste</l>
-        <l n="65">m<damage type="smudge">e</damage>ðe æfter<lb facs="#VB_line_105v_05" n="5" xml:id="VB_lb_105v_05"/>ðam
-          miclan gewinne ,<!-- CHECK --> <hi rend="cap">O</hi>ngunnon him þa mold<subst>
+        <l n="65">m<damage type="smudge">e</damage>ðe æfter<lb facs="#VB_line_105v_05" n="5" xml:id="VB_lb_105v_05"/>ðam miclan gewinne<choice>
+              <orig><pc>,</pc></orig>
+              <reg>.</reg>
+            </choice> <hi rend="cap">O</hi>ngunnon him þa mold<subst>
             <del rend="exp">æ</del>
             <add>e</add>
           </subst>rn wyrcan</l>
@@ -1671,10 +1712,10 @@
           </choice></l>
         <l n="72">hilderinca<orig>
             <pc type="metrical">.</pc></orig> hræw colode</l>
-        <l n="73">fæger <choice>
+        <l n="73">fæger <seg type="kenning"><choice>
             <orig>feorg bold</orig>
             <reg>feorgbold</reg>
-          </choice> þa u<g ref="#sins"/><lb facs="#VB_line_105v_12" n="12" xml:id="VB_lb_105v_12"/>man fyllan ongan<orig>
+          </choice></seg> þa u<g ref="#sins"/><lb facs="#VB_line_105v_12" n="12" xml:id="VB_lb_105v_12"/>man fyllan ongan<orig>
             <pc type="metrical">.</pc></orig></l>
         <l n="74">ealle to eorðan þæt wæ<g ref="#sins"/> eg<g ref="#eenl"/><g ref="#sins"/>lic wyrd</l>
         <l n="75"><lb facs="#VB_line_105v_13" n="13" xml:id="VB_lb_105v_13"/><choice>
@@ -1691,8 +1732,8 @@
             <orig><abbr type="brev"><am><g ref="#et"/></am></abbr><g ref="#sins"/>eolfre</orig>
             <reg><expan><ex>and</ex></expan> seolfre</reg>
           </choice><choice>
-            <orig><pc>,<!-- CHECK --></pc></orig>
-            <reg><pc>.</pc></reg>
+            <orig><pc>,</pc></orig>
+            <reg>.</reg>
           </choice></l>
         <l n="78"><lb facs="#VB_line_105v_15" n="15" xml:id="VB_lb_105v_15"/><choice>
             <orig>Nuðu</orig>
@@ -1722,8 +1763,8 @@
             <orig>toþy<g ref="#sins"/><g ref="#sins"/><am><g ref="#umacr"/></am></orig>
             <reg>toþyssu<ex>m</ex></reg>
           </choice> beacne on me <choice>
-            <orig>bearngode<g ref="#sins"/></orig>
-            <reg>bearn godes</reg>
+            <orig>bearn<persName ref="#God" type="religion">gode<g ref="#sins"/></persName></orig>
+            <reg>bearn <persName ref="#God" type="religion">Godes</persName></reg>
           </choice></l>
         <l n="84"><lb facs="#VB_line_105v_19" n="19" xml:id="VB_lb_105v_19"/>þrowode hwile forþan ic <choice>
             <orig>þr<g ref="#yrgmainstrok"/>m fæst</orig>
@@ -1757,11 +1798,11 @@
             <orig>ichim</orig>
             <reg>ic him</reg>
           </choice> lif<g ref="#eenl"/><g ref="#sins"/> weg</l>
-        <l n="89">rihtne ger<g ref="#yrgmainstrok"/>mde <choice>
+        <l n="89">rihtne ger<g ref="#yrgmainstrok"/>mde <seg type="kenning"><choice>
             <orig><w>reord
                 be<lb facs="#VB_line_105v_23" n="23" xml:id="VB_lb_105v_23_orig"/>rend<am><g ref="#umacr"/></am></w></orig>
             <reg><w>reordbe<lb facs="#VB_line_105v_23" n="23" xml:id="VB_lb_105v_23_reg"/>rendu<ex>m</ex></w></reg>
-          </choice></l>
+          </choice></seg></l>
         <l n="90">hwæt me <choice>
             <orig>þageweorðode</orig>
             <reg>þa geweorðode</reg>
@@ -1773,16 +1814,16 @@
           <choice>
             <orig>heofon rice<g ref="#sins"/></orig>
             <reg>heofon rices</reg>
-          </choice> weard,<!-- CHECK --></l>
+          </choice> weard<pc>,</pc></l>
         <l n="92"><g ref="#slong"/>wylce <choice>
             <orig><g ref="#slong"/>wahe</orig>
             <reg>swa he</reg>
           </choice> hi<g ref="#sins"/> modor eac<lb facs="#VB_line_105v_25" n="25" xml:id="VB_lb_105v_25"/>marian
           <g ref="#sins"/>ylfe</l>
-        <l n="93">ælmihtig <name type="religion"><choice>
+        <l n="93">ælmihtig <persName ref="#God" type="religion"><choice>
               <orig>god</orig>
               <reg>God</reg>
-            </choice></name> <pc>.</pc> for ealle menn</l>
+            </choice></persName> <pc>.</pc> for ealle menn</l>
         <l n="94">geweorðode<lb facs="#VB_line_105v_26" n="26" xml:id="VB_lb_105v_26"/>ofer eall wifa cynn<orig><pc
               type="metrical">.</pc></orig></l>
         <l n="95">Nu <choice>
@@ -1812,10 +1853,10 @@
         <l n="98"><choice>
             <orig><g ref="#sins"/>eðe</orig>
             <reg>se ðe</reg>
-          </choice> ælmihtig <name type="religion"><choice>
+          </choice> ælmihtig <persName ref="#God" type="religion"><choice>
               <orig>god</orig>
               <reg>God</reg>
-            </choice></name>
+            </choice></persName>
           <choice>
             <orig>onþrowode</orig>
             <reg>on þrowode</reg>
@@ -1837,10 +1878,10 @@
             <orig><abbr type="brev"><am><g ref="#et"/></am></abbr></orig>
             <reg><expan><ex>and</ex></expan>
             </reg>
-          </choice> <name type="person"><choice>
+          </choice> <persName ref="#Adam" type="person"><choice>
               <orig>adome<g ref="#sins"/></orig>
               <reg>Adames</reg>
-            </choice></name>
+            </choice></persName>
           <choice>
             <orig>ealdge wyrht<am><g ref="#umacr"/></am></orig>
             <reg>ealdgewyrhtu<ex>m</ex></reg>
@@ -1887,10 +1928,10 @@
             <orig>dom dæge</orig>
             <reg>domdæge</reg>
           </choice> dr<g ref="#yrgmainstrok"/>hten <g ref="#sins"/><g ref="#yrgmainstrok"/>lfa</l>
-        <l n="106">ælmihtig <name type="religion"><choice>
+        <l n="106">ælmihtig <persName ref="#God" type="religion"><choice>
               <orig>god</orig>
               <reg>God</reg>
-            </choice></name>
+            </choice></persName>
           <choice>
             <orig><abbr type="brev"><am><g ref="#et"/></am></abbr>hi<g ref="#sins"/></orig>
             <reg><expan><ex>and</ex></expan> his</reg>
@@ -1939,16 +1980,17 @@
           on<lb facs="#VB_line_106r_07" n="7" xml:id="VB_lb_106r_07"/>ðam beame dyde<orig>
             <pc type="metrical">.</pc></orig></l>
         <l n="115"><hi rend="double"><g ref="#aenl"/></hi>c hie þonne forhtiað<orig>
-            <pc type="metrical">.</pc></orig>
-          <abbr type="brev"><am><g ref="#et"/></am></abbr>
-          <!-- check this et --> fea þencaþ</l>
+            <pc type="metrical">.</pc></orig><choice>
+              <orig><abbr type="brev"><am><g ref="#et"/></am></abbr>fea</orig>
+              <reg><expan><ex>and</ex></expan> fea</reg>
+            </choice> þencaþ</l>
         <l n="116">hwæt <choice>
             <orig>hieto</orig>
             <reg>hie to</reg>
-          </choice><lb facs="#VB_line_106r_08" n="8" xml:id="VB_lb_106r_08"/><name type="religion"><choice>
+          </choice><lb facs="#VB_line_106r_08" n="8" xml:id="VB_lb_106r_08"/><persName ref="#Christ" type="religion"><choice>
               <orig>cri<g ref="#slong"/>te</orig>
               <reg>Criste</reg>
-            </choice></name> cweðan onginnen<orig>
+            </choice></persName> cweðan onginnen<orig>
             <pc type="metrical">.</pc></orig></l>
         <l n="117"><choice>
             <orig><hi rend="cap">N</hi>eþearf</orig>
@@ -2006,10 +2048,10 @@
             <orig>þæt<add place="sub">,</add><add place="sup">ic</add>þone</orig>
             <reg>þæt <add place="sup">ic</add> þone</reg>
           </choice>
-          <choice>
+          <seg type="kenning"><choice>
             <orig><g ref="#sins"/>ige beam</orig>
             <reg>sigebeam</reg>
-          </choice>
+          </choice></seg>
           <g ref="#sins"/>ecan mote</l>
         <l n="128"><lb facs="#VB_line_106r_15" n="15" xml:id="VB_lb_106r_15"/>ana oftor þonne ealle men</l>
         <l n="129">well weo<damage type="faded">r</damage>þian me i<g ref="#sins"/> willa <choice>
@@ -2131,10 +2173,10 @@
             <orig>onþ<am><g ref="#amacr"/></am></orig>
             <reg>onþa<ex>m</ex></reg>
           </choice>
-          <choice>
+          <seg type="kenning"><choice>
             <orig>gealg treowe</orig>
             <reg>gealgtreowe</reg>
-          </choice>
+          </choice></seg>
           <choice>
             <orig>forguman</orig>
             <reg>for guman</reg>
@@ -2182,8 +2224,8 @@
           </choice>þa he mid manigeo com</l>
         <l n="152">ga<g ref="#slong"/>ta weorode<lb facs="#VB_line_106r_30" n="30" xml:id="VB_lb_106r_30"/><del
             rend="rasure">o</del><choice>
-            <orig>ongode<g ref="#sins"/></orig>
-            <reg>on godes</reg>
+            <orig>on<persName type="religion">gode</persName><g ref="#sins"/></orig>
+            <reg>on <persName type="religion">Godes</persName></reg>
           </choice> rice</l>
         <l n="153">anwealda ælmihtig <choice>
             <abbr>engl<am><g ref="#umacr"/></am></abbr>
@@ -2212,16 +2254,185 @@
             <orig>onwuldre</orig>
             <reg>on wuldre</reg>
           </choice> þa heora<lb facs="#VB_line_106r_32" n="32" xml:id="VB_lb_106r_32"/>weald<g ref="#eenl"/>nd cwom</l>
-        <l n="156">ælmihtig <name type="religion"><choice>
+        <l n="156">ælmihtig <persName ref="#God" type="religion"><choice>
               <orig>god</orig>
               <reg>God</reg>
-            </choice></name> þær hi<g ref="#sins"/> eðel wæ<g ref="#sins"/>
+            </choice></persName> þær hi<g ref="#sins"/> eðel wæ<g ref="#sins"/>
           <g ref="#colmidcomposit"/></l>
 
       </div>
 
     </body>
     <back>
+      <div n="Il sogno della Croce" type="translation" xml:id="DOTR_trans_it" xml:lang="ita">
+        
+        <head>Il sogno della Croce</head>
+        
+        <lb rend="empty"/>
+
+        <l n="1">Ascoltate! Voglio raccontarvi la prodigiosa visione</l>
+        <l n="2">che come un sogno si è presentata nel mezzo della notte</l>
+        <l n="3">quando i mortali si erano abbandonati al sonno.</l>
+        <l n="4">Mi parve di vedere un albero meraviglioso</l>
+        <l n="5">innalzarsi nel cielo, ammantato di luce,</l>
+        <l n="6">un tronco luminosissimo. Quel segno era tutto</l>
+        <l n="7">ricoperto d’oro. Splendide gemme giacevano</l>
+        <l n="8">verso la superficie della terra, e altre cinque erano in alto,</l>
+        <l n="9">all’incrocio delle braccia. Tutte ammiravano l’angelo del Signore,</l>
+        <l n="10">le meravigliose creature. Non era certo il patibolo</l>
+        <l n="11">di un malvagio, anime sante lo contemplavano,</l>
+        <l n="12">gli uomini sulla terra e tutto il glorioso creato.</l>
+        <l n="13">Quel tronco vittorioso era magnifico, e io macchiato dai peccati,</l>
+        <l n="14">straziato dalle colpe. Vedevo quell’albero glorioso,</l>
+        <l n="15">adorno di vesti preziose, splendere gioiosamente,</l>
+        <l n="16">rivestito d’oro; le gemme avevano</l>
+        <l n="17">mirabilmente avvolto l’albero del Signore.</l>
+        <l n="18">Tuttavia attraverso quell’oro potevo scorgere</l>
+        <l n="19">l’antico assalto dei malvagi, quando cominciò</l>
+        <l n="20">a stillare sangue dal lato destro. Venni sopraffatto dal dolore,</l>
+        <l n="21">ero in pena per quella maestosa visione. Vidi quel nobile segno</l>
+        <l n="22">cambiare addobbi e colore: ora era intriso di umore,</l>
+        <l n="23">sommerso dallo scorrere del sangue, ora era ornato da tesori.</l>
+        <l n="24">Tuttavia giacendo là per lungo tempo</l>
+        <l n="25">con il cuore colmo di dolore contemplavo l’albero del Salvatore</l>
+        <l n="26">finché non lo sentii parlare</l>
+        <l n="27">Disse allora queste parole il legno più nobile:</l>
+
+        <said aloud="true"><l n="28">Fu molto tempo fa (ancora me ne ricordo)</l>
+          <l n="29">quando fui abbattuto al limite del bosco</l>
+          <l n="30">divelto dalle mie radici. Nemici potenti mi ghermirono,</l>
+          <l n="31">mi foggiarono per il loro spettacolo, mi ordinarono di reggere i loro malfattori.</l>
+          <l n="32">Gli uomini mi portarono sulle spalle, poi mi issarono su un colle:</l>
+          <l n="33">fin troppi nemici mi fissarono. Vidi allora il Signore dell’umanità</l>
+          <l n="34">affrettarsi con grande coraggio perché voleva salire su di me.</l>
+          <l n="35">Non osai allora piegarmi o spezzarmi</l>
+          <l n="36">contro il volere del Signore, quando vidi tremare</l>
+          <l n="37">la superficie della terra. Avrei potuto abbattere</l>
+          <l n="38">tutti i nemici, ma rimasi immobile.</l>
+          <l n="39">Si spogliò il giovane eroe (era Dio onnipotente),</l>
+          <l n="40">forte e deciso. Poi salì sull’alto patibolo,</l>
+          <l n="41">valoroso di fronte a molti uomini, Lui che intendeva salvare l’umanità.</l>
+          <l n="42">Tremai quando l’Eroe mi afferrò, ma non osai piegarmi al suolo,</l>
+          <l n="43">cadere a terra: rimasi saldamente eretta.</l>
+          <l n="44">Venni issata come croce. Portavo un Re potente,</l>
+          <l n="45">il Signore dei Cieli, non osai piegarmi.</l>
+          <l n="46">Mi trafissero con neri chiodi. Le cicatrici sono ancora visibili,</l>
+          <l n="47">ferite inflitte dai malvagi. Non osai ferire nessuno di loro.</l>
+          <l n="48">Si fecero beffe di noi due. Ero tutta intrisa di sangue</l>
+          <l n="49">sgorgato dal fianco di quel guerriero quando egli rese lo spirito.</l>
+          <l n="50">Di molti avevo sopportato il fato crudele</l>
+          <l n="51">su quel monte. Vidi il Dio degli eserciti</l>
+          <l n="52">atrocemente crocifisso. L’oscurità aveva</l>
+          <l n="53">avvolto di nubi il corpo del Signore,</l>
+          <l n="54">lo splendore radioso; l’ombra si propagava,</l>
+          <l n="55">oscura sotto i cieli. Tutto il creato piangeva,</l>
+          <l n="56">lamentava la caduta del re. Cristo era sulla croce.</l>
+          <l n="57">E tuttavia arrivarono in fretta, da lontano, uomini desiderosi</l>
+          <l n="58">di accostarsi al nobile principe . Osservai tutto quanto.</l>
+          <l n="59">Ero dolorosamente tormentata dall’angoscia, eppure mi piegai nelle mani</l>
+          <l n="60">di quegli uomini, ubbidendo con fermo coraggio. Presero Dio onnipotente</l>
+          <l n="61">e lo sollevarono da quel tormento atroce. Quei guerrieri mi lasciarono</l>
+          <l n="62">eretta, intrisa di sangue: ero tutta ferita dai dardi.</l>
+          <l n="63">Deposero quelle membra spossate, restarono accanto al suo corpo</l>
+          <l n="64">contemplando il Signore dei Cieli. Egli indugiò per breve tempo,</l>
+          <l n="65">esausto dopo la cruenta battaglia. Poi fecero un sepolcro</l>
+          <l n="66">quegli uomini, dinanzi al Suo uccisore, lo scavarono nella pietra lucente</l>
+          <l n="67">e vi posero il Signore delle vittorie. Verso sera intonarono un canto
+            funebre,</l>
+          <l n="68">affranti, quando venne il momento di lasciare,</l>
+          <l n="69">sfiniti, quel Re glorioso. Egli si riposò accanto a una piccola schiera.</l>
+          <l n="70">Ma noi restammo là, piangendo, per lungo tempo</l>
+          <l n="71">dopo che si era spenta la voce</l>
+          <l n="72">dei guerrieri. Il corpo si raffreddò,</l>
+          <l n="73">la bella dimora dello spirito. Poi fummo tutte</l>
+          <l n="74">abbattute al suolo: fu un destino terribile!</l>
+          <l n="75">Ci seppellirono in un pozzo profondo, ma là i servi del Signore,</l>
+          <l n="76">i suoi amici, mi trovarono,</l>
+          <l n="77">e mi hanno coperto d’oro e d’argento.</l>
+          <l n="78">Adesso hai appreso, amico mio diletto,</l>
+          <l n="79">come fui costretta a sopportare l’opera dei malvagi,</l>
+          <l n="80">i crudeli tormenti. Ora è giunto il tempo</l>
+          <l n="81">in cui mi onoreranno in lungo e in largo</l>
+          <l n="82">gli uomini sulla terra, e tutte le gloriose creature</l>
+          <l n="83">pregheranno per questo segno. Su di me il Figlio di Dio</l>
+          <l n="84">ha sofferto per breve tempo. Perciò adesso io m’innalzo maestosa</l>
+          <l n="85">sotto i cieli, e ho il potere di salvare</l>
+          <l n="86">ogni uomo che mi venera con timore.</l>
+          <l n="87">Un tempo ero il più crudele dei tormenti,</l>
+          <l n="88">il più odioso per il popolo, prima che io aprissi la retta via</l>
+          <l n="89">della salvezza ai mortali.</l>
+          <l n="90">Ecco, mi ha onorato il Principe della gloria</l>
+          <l n="91">più di ogni altro albero della foresta, il Guardiano del Regno dei cieli,</l>
+          <l n="92">così come sua madre, la stessa Maria,</l>
+          <l n="93">Dio onnipotente ha onorato più di ogni altra donna</l>
+          <l n="94">dinanzi all’umanità intera.</l>
+          <l n="95">Ora ti ingiungo, amico mio diletto,</l>
+          <l n="96">di riferire questa visione agli uomini,</l>
+          <l n="97">di parlare e rivelare che è l’albero della gloria</l>
+          <l n="98">quello su cui Dio onnipotente soffrì</l>
+          <l n="99">per i molti peccati del genere umano</l>
+          <l n="100">e per l’antica colpa di Adamo.</l>
+          <l n="101">Là egli gustò il sapore della morte, ma il Signore risorse</l>
+          <l n="102">con il suo immenso potere per soccorrere gli uomini.</l>
+          <l n="103">Poi ascese al cielo. Tornerà di nuovo qui,</l>
+          <l n="104">su questa terra, per cercare gli uomini</l>
+          <l n="105">nel giorno del giudizio, il Signore in persona,</l>
+          <l n="106">Dio onnipotente, e gli angeli saranno con lui,</l>
+          <l n="107">quando sarà il momento di giudicare (Suo è il potere del giudizio)</l>
+          <l n="108">ogni uomo per ciò che egli</l>
+          <l n="109">ha meritato in questa vita effimera.</l>
+          <l n="110">Nessuno allora potrà sottrarsi al timore</l>
+          <l n="111">per il verdetto che il Signore pronuncerà.</l>
+          <l n="112">Davanti alle moltitudini chiederà se vi sia un uomo</l>
+          <l n="113">che, in nome del Signore, sia disposto a gustare</l>
+          <l n="114">la morte amara come Egli fece sulla croce.</l>
+          <l n="115">Ma avranno paura e poco penseranno</l>
+          <l n="116">alla risposta da dare al Cristo.</l>
+          <l n="117">Allora non dovrà avere alcun timore</l>
+          <l n="118">chi porta nel cuore il segno più nobile,</l>
+          <l n="119">ma giungerà nel regno dei cieli</l>
+          <l n="120">grazie alla Croce, lasciando questo sentiero terreno,</l>
+          <l n="121">ogni anima che desideri dimorare con il Signore.</l>
+        </said>
+
+        <l n="122">Pregai allora l’albero con il cuore colmo di gioia,</l>
+        <l n="123">con grande fervore là dove mi trovavo,</l>
+        <l n="124">in compagnia di pochi. Il mio spirito</l>
+        <l n="125">desiderava cominciare il cammino, soffrivo</l>
+        <l n="126">ore di angoscia. Ora è viva in me una speranza di salvezza,</l>
+        <l n="127">quel legno trionfante cercare</l>
+        <l n="128">da solo e più spesso di tutti gli altri uomini,</l>
+        <l n="129">venerarlo degnamente. Questo desiderio</l>
+        <l n="130">è saldo nel mio cuore, e le mie speranze di soccorso</l>
+        <l n="131">sono riposte nella Croce. Non ho amici potenti a iosa</l>
+        <l n="132">nel mondo, no, tutti sono partiti,</l>
+        <l n="133">hanno lasciato i piaceri terreni per cercare il Re della gloria.</l>
+        <l n="134">Ora vivono nel regno dei cieli accanto all’alto Padre,</l>
+        <l n="135">dimorano nella gloria, e io attendo ogni giorno</l>
+        <l n="136">l’attimo in cui la Croce del Signore,</l>
+        <l n="137">che prima ho contemplato qui, sulla terra,</l>
+        <l n="138">mi rapisca da questa vita effimera</l>
+        <l n="139">e mi porti là dove la gioia è immensa,</l>
+        <l n="140">la beatitudine nei cieli, là dove il popolo di Dio</l>
+        <l n="141">siede a banchetto, là dove la felicità è eterna;</l>
+        <l n="142">e mi ponga dove poi io possa per sempre</l>
+        <l n="143">dimorare nello splendore, con tutti i santi</l>
+        <l n="144">bearmi di quelle gioie. Mi sia amico il Signore,</l>
+        <l n="145">che un tempo qui, sulla terra, ha sofferto</l>
+        <l n="146">sulla Croce per i peccati degli uomini.</l>
+        <l n="147">Egli ci ha redenti e ci ha concesso la vita,</l>
+        <l n="148">una dimora nei cieli. La speranza fu rinnovata</l>
+        <l n="149">con gloria e gioia per chi soffrì nel fuoco.</l>
+        <l n="150">il Figlio fu vittorioso in quella spedizione,</l>
+        <l n="151">potente e trionfante, quando con molti giunse,</l>
+        <l n="152">un esercito di anime, nel regno di Dio,</l>
+        <l n="153">sovrano onnipotente, per la gioia degli angeli</l>
+        <l n="154">e di tutti quei santi che già nei cieli</l>
+        <l n="155">dimoravano nella gloria, quando il loro Signore,</l>
+        <l n="156">Dio onnipotente, fece ritorno alla sua patria.</l>
+
+      </div>
+
       <div type="hotspot">
         <div facs="#VB_hs_106r_01" xml:id="VB_div_hs_106r_01">
           <p>The scribe here wrote a word, 'þrowode', that he later corrected in 'wolde' by erasing the first three
