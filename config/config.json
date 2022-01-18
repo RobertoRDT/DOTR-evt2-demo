@@ -1,5 +1,5 @@
 {
-   "indexTitle": "The Dream of the Rood [Digital Vercelli Book]",
+   "indexTitle": "The Dream of the Rood [EVT2 demo version]",
    "webSite": "http://vbd.humnet.unipi.it/",
    "logoUrl": "",
    
@@ -94,7 +94,7 @@
    "toolPinAppEntries": true,
    "toolImageTextLinking": true,
 
-   "namedEntitiesSelector": false,
+   "namedEntitiesSelector": true,
    "namedEntitiesToHandle": [
       {
          "tagName": "persName",
@@ -104,15 +104,21 @@
       {
          "tagName": "placeName",
          "label": "Places",
-         "available": true
+         "available": false
       },
       {
          "tagName": "orgName",
          "label": "Organizations",
-         "available": true
+         "available": false
       }
    ],
    "otherEntitiesToHandle": [
+      {
+         "tagName": "seg",
+         "label": "Kenningar",
+         "available": true,
+         "color": "#cfc"
+      },
       {
          "tagName": "rolename",
          "label": "Role Name",
