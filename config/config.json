@@ -140,8 +140,8 @@
    "witnessesGroups": [],
 
    "showInlineCriticalApparatus": true,
-   "showInlineSources": false,
-   "showInlineAnalogues": false,
+   "showInlineSources": true,
+   "showInlineAnalogues": true,
    "showReadingExponent": true,
 
    "toolHeatMap": false,
