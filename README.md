@@ -6,5 +6,5 @@ The Dream of the Rood, dating back to the first half of the 8th Century in its e
 In the Vercelli Book the poem starts with the with the narrator having a dream: in this dream a wonderful object, which is later to be identified with the Holy Cross, stands in the air and tells the story of the crucifixion of Christ to the narrator.
 
 ### A digital edition and facsimile
-Experimental edition using EVT 2 beta2.
+Experimental edition using EVT 2 beta2, published directly on GitHub: https://robertordt.github.io/DOTR-evt2-demo/.
 
